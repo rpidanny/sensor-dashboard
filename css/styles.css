@@ -1,0 +1,30 @@
+canvas{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+body {
+    margin-top: 40px;
+    background: #263238;
+    color:#fff;
+}
+section {
+    width: 75%;
+    padding: 75px 0;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+@media(max-width:768px) {
+    section {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .section-heading {
+        font-size: 2em;
+    }
+}
