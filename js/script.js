@@ -25,7 +25,7 @@ $(document).ready(function() {
                             label: "Temperature (celcius)",
                             data: temp,
                             borderColor: '#F44336',
-                            backgroundColor: 'rgba(0, 0, 0, 0)',
+                            backgroundColor: '#F44336',
                             fill: true,
                             cubicInterpolationMode: 'monotone'
                         }, {
@@ -94,8 +94,8 @@ $(document).ready(function() {
                             label: "Humidity",
                             data: hum,
                             borderColor: '#0091EA',
-                            backgroundColor: 'rgba(0, 0, 0, 0)',
-                            fill: false,
+                            backgroundColor: '#0091EA',
+                            fill: true,
                             cubicInterpolationMode: 'monotone'
                         }]
                     },
