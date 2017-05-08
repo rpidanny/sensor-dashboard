@@ -26,13 +26,13 @@ $(document).ready(function() {
                             data: temp,
                             borderColor: '#F44336',
                             backgroundColor: '#F44336',
-                            fill: true,
+                            fill: false,
                             cubicInterpolationMode: 'monotone'
                         }, {
                             label: "Heat Index (celcius)",
                             data: heat,
                             borderColor: '#009688',
-                            backgroundColor: 'rgba(0, 0, 0, 0)',
+                            backgroundColor: '#009688',
                             fill: false,
                             cubicInterpolationMode: 'monotone',
                             borderDash: [5, 5],
