@@ -1,6 +1,7 @@
 $(document).ready(function() {
             console.log( "ready!" );
-            var d = new Date().toLocaleString("en-US", {timeZone: "Asia/Kathmandu"});
+            var temp = new Date().toLocaleString("en-US", {timeZone: "Asia/Kathmandu"});
+            var d = new Date(temp)
             d.setDate(d.getDate()-5);
             query = { "timestamp": { "$gte": d.getTime() }}
             // $.getJSON("https://sensor-datalogger.herokuapp.com/api/v1/sensor/daily", function(result){
