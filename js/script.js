@@ -1,6 +1,10 @@
 $(document).ready(function() {
             console.log( "ready!" );
-            $.getJSON("https://sensor-datalogger.herokuapp.com/api/v1/sensor/daily", function(result){
+            var d = new Date();
+            d.setDate(d.getDate()-5);
+            query = { "timestamp": { "$gte": d.getTime() }}
+            // $.getJSON("https://sensor-datalogger.herokuapp.com/api/v1/sensor/daily", function(result){
+            $.getJSON("https://21c7s8b615.execute-api.eu-west-1.amazonaws.com/dev/find", query, function(result){
                 console.log(result)
                 var temp = [];
                 var hum = [];
