@@ -3,7 +3,7 @@ $(document).ready(function () {
   var temp = new Date().toLocaleString("en-US", { timeZone: "Asia/Kathmandu" });
   var d = new Date(temp);
   d.setDate(d.getDate() - 5);
-  query = { timestamp: { $gte: d.getTime() } };
+  query = JSON.stringify({ timestamp: { $gte: d.getTime() } });
   // $.getJSON("https://sensor-datalogger.herokuapp.com/api/v1/sensor/daily", function(result){
   $.post(
     "https://21c7s8b615.execute-api.eu-west-1.amazonaws.com/dev/find",
