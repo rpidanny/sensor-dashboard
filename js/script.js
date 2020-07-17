@@ -2,8 +2,9 @@ $(document).ready(function () {
   console.log("ready!");
   var temp = new Date().toLocaleString("en-US", { timeZone: "Asia/Kathmandu" });
   var d = new Date(temp);
-  d.setDate(d.getDate() - 5);
-  query = JSON.stringify({ timestamp: { $gte: d.getTime() } });
+  var twoDays = new Date(new Date().getTime() - (48 * 60 * 60 * 1000))
+
+  query = JSON.stringify({ timestamp: { $gte: twoDays.getTime() } });
   // $.getJSON("https://sensor-datalogger.herokuapp.com/api/v1/sensor/daily", function(result){
   $.post(
     "https://21c7s8b615.execute-api.eu-west-1.amazonaws.com/dev/find",
@@ -15,13 +16,14 @@ $(document).ready(function () {
       var heat = [];
       var label = [];
       result.forEach(function (data) {
-        let date = new Date(data.timestamp);
+        let tem = new Date(data.timestamp).toLocaleString("en-US", { timeZone: "Asia/Kathmandu" });
+        let date = new Date(tem)
 
         if (date.getMinutes() == 0) {
           temp.push(data.temperature);
           hum.push(data.humidity);
           heat.push(data.heatIndex);
-          label.push(date.getHours());
+          label.push(date.getHours() - 1);
         }
       });
       var configTemperature = {
@@ -71,7 +73,7 @@ $(document).ready(function () {
                 },
                 scaleLabel: {
                   display: true,
-                  labelString: "Time",
+                  labelString: "Hour",
                   color: "#fff",
                 },
               },
